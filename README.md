@@ -20,4 +20,4 @@ Build a docker image and publish it locally:
 Run docker image:
 `docker run -p 9000:9000 hello-lagom:1.0-SNAPSHOT`
 
-Verify by opening http://localhost:9000/api/hello/World in your browser!# scala-calculator
+Verify by opening http://localhost:9000/api/compute/{expresion} in your browser!# scala-calculator

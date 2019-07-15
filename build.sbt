@@ -6,17 +6,17 @@ scalaVersion in ThisBuild := "2.11.8"
 
 val scalaTest = "org.scalatest" %% "scalatest" % "3.0.1" % Test
 
-lazy val `hello` = (project in file("."))
-  .aggregate(`hello-api`, `hello-impl`)
+lazy val `calculator` = (project in file("."))
+  .aggregate(`calculator-api`, `calculator-impl`)
 
-lazy val `hello-api` = (project in file("hello-api"))
+lazy val `calculator-api` = (project in file("calculator-api"))
   .settings(
     libraryDependencies ++= Seq(
       lagomScaladslApi
     )
   )
 
-lazy val `hello-impl` = (project in file("hello-impl"))
+lazy val `calculator-impl` = (project in file("calculator-impl"))
   .enablePlugins(LagomScala)
   .enablePlugins(JavaAppPackaging)
   .settings(
@@ -25,9 +25,9 @@ lazy val `hello-impl` = (project in file("hello-impl"))
       scalaTest,
       filters
     ),
-    packageName in Docker := "hello-lagom",
+    packageName in Docker := "calculator-lagom",
     dockerExposedPorts in Docker := Seq(9000)
   )
   .settings(lagomForkedTestSettings: _*)
-  .dependsOn(`hello-api`)
+  .dependsOn(`calculator-api`)
 
