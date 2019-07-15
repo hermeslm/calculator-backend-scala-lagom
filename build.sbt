@@ -22,7 +22,8 @@ lazy val `hello-impl` = (project in file("hello-impl"))
   .settings(
     libraryDependencies ++= Seq(
       lagomScaladslTestKit,
-      scalaTest
+      scalaTest,
+      filters
     ),
     packageName in Docker := "hello-lagom",
     dockerExposedPorts in Docker := Seq(9000)

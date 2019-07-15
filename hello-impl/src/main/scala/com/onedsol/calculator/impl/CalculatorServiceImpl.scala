@@ -6,8 +6,11 @@ import com.onedsol.calculator.api.CalculatorService
 import scala.concurrent.{ExecutionContext, Future}
 
 class CalculatorServiceImpl
-  (implicit ec: ExecutionContext) extends CalculatorService {
+(implicit ec: ExecutionContext) extends CalculatorService {
   override def compute(expresion: String) = ServiceCall { _ =>
-    Future { "Computed: " + Calculator.main(expresion) }
+    //    val decoded = URLDecoder.decode(expresion, "UTF-8")
+    Future {
+      "" + Calculator.compute(expresion)
+    }
   }
 }

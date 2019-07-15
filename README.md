@@ -1,4 +1,4 @@
-# hello-lagom - Minimal example of a Lagom service in Scala
+# Calculator using Lagom service in Scala
 
 Lagom has great [documentation](https://www.lagomframework.com/documentation/)
 and [examples](https://www.lagomframework.com/documentation/1.3.x/scala/LagomExamples.html) but even the
